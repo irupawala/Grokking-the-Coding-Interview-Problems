@@ -1,3 +1,5 @@
+# LintCode Link - https://www.lintcode.com/problem/850/
+
 # LintCode Solution 
 
 """
