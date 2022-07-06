@@ -10,7 +10,7 @@ class Solution:
             
             p1 = nums[i]
             t1 = target - p1
-            sublist_p1 = [p1]
+            sublist = [p1]
             
             for j in range(i+1, len(nums)-2):
             
@@ -18,18 +18,18 @@ class Solution:
                 
                 p2 = nums[j]
                 t2 = t1 - p2
-                sublist_p1.append(p2)
+                sublist.append(p2)
 
                 left = j+1
                 right = len(nums)-1
 
                 while left < right:
                     if nums[left] + nums[right] == t2:
-                        sublist_p1.append(nums[left])
-                        sublist_p1.append(nums[right])
-                        result.append(sublist_p1[:])
-                        sublist_p1.pop()
-                        sublist_p1.pop()
+                        sublist.append(nums[left])
+                        sublist.append(nums[right])
+                        result.append(sublist[:])
+                        sublist.pop()
+                        sublist.pop()
                         left += 1
                         while left < right and nums[left] == nums[left-1]:
                             left += 1
@@ -39,7 +39,7 @@ class Solution:
                     else:
                         right -= 1
 
-                sublist_p1.pop()   
+                sublist.pop()   
         
         return result
                         
